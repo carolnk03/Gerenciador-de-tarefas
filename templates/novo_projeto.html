@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Novo Projeto - TaskManager{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width: 600px; margin: 50px auto;">
+    <h2 style="color: #667eea; margin-bottom: 30px;">📁 Novo Projeto</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="nome">Nome do Projeto *</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do projeto"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="4"
+                placeholder="Descreva o projeto (opcional)"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="prazo">Prazo Final</label>
+            <input type="date" class="form-control" id="prazo" name="prazo">
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button type="submit" class="btn btn-primary" style="flex: 2;">Criar Projeto</button>
+            <a href="{{ url_for('dashboard') }}" class="btn"
+                style="flex: 1; text-align: center; background: #cbd5e0; color: #4a5568; padding: 10px; border-radius: 5px; text-decoration: none;">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

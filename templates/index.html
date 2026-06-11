@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}TaskFlow - Gerenciador de Tarefas Moderno{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div style="text-align: center; max-width: 600px;">
+        <div style="margin-bottom: 48px;">
+            <i class="fas fa-tasks" style="font-size: 80px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+            <h1 style="font-size: 48px; font-weight: 800; margin: 24px 0 16px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                TaskFlow
+            </h1>
+            <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6;">
+                Organize seus projetos, gerencie tarefas e aumente sua produtividade com um sistema moderno e intuitivo.
+            </p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 48px;">
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-project-diagram" style="font-size: 32px; color: var(--primary); margin-bottom: 16px;"></i>
+                <h3 style="margin-bottom: 8px;">Projetos</h3>
+                <p style="color: var(--text-secondary);">Crie e organize múltiplos projetos</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-check-double" style="font-size: 32px; color: var(--success); margin-bottom: 16px;"></i>
+                <h3 style="margin-bottom: 8px;">Tarefas</h3>
+                <p style="color: var(--text-secondary);">Gerencie tarefas com prioridades</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-bell" style="font-size: 32px; color: var(--warning); margin-bottom: 16px;"></i>
+                <h3 style="margin-bottom: 8px;">Lembretes</h3>
+                <p style="color: var(--text-secondary);">Receba notificações de prazos</p>
+            </div>
+        </div>
+        
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="{{ url_for('login') }}" class="btn btn-primary" style="font-size: 18px; padding: 16px 32px;">
+                <i class="fas fa-sign-in-alt"></i>
+                Entrar
+            </a>
+            <a href="{{ url_for('registro') }}" class="btn btn-outline" style="font-size: 18px; padding: 16px 32px;">
+                <i class="fas fa-user-plus"></i>
+                Criar Conta
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

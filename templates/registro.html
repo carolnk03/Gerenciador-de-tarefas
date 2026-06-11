@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Criar Conta - TaskFlow{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card fade-in">
+        <div class="auth-logo">
+            <i class="fas fa-user-plus"></i>
+            <h1>Criar Conta</h1>
+            <p style="color: var(--text-secondary); margin-top: 8px;">
+                Comece a organizar suas tarefas
+            </p>
+        </div>
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input type="text" class="form-control" id="nome" name="nome" 
+                       placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" 
+                       placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" name="senha" 
+                       placeholder="Mínimo 6 caracteres" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px; padding: 14px;">
+                <i class="fas fa-user-plus"></i>
+                Criar Conta
+            </button>
+        </form>
+        
+        <p style="margin-top: 24px; text-align: center; color: var(--text-secondary);">
+            Já tem uma conta? 
+            <a href="{{ url_for('login') }}" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                Faça login
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}

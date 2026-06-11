@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Nova Tarefa - TaskManager{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width: 600px; margin: 50px auto;">
+    <h2 style="color: #667eea; margin-bottom: 10px;">📝 Nova Tarefa</h2>
+    <p style="color: #718096; margin-bottom: 20px;">Projeto: <strong>{{ projeto.nome }}</strong></p>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="titulo">Título da Tarefa *</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o título da tarefa"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="3"
+                placeholder="Descreva a tarefa (opcional)"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="prioridade">Prioridade</label>
+            <select class="form-control" id="prioridade" name="prioridade">
+                <option value="baixa">🟢 Baixa</option>
+                <option value="media" selected>🟡 Média</option>
+                <option value="alta">🔴 Alta</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="prazo">Prazo</label>
+            <input type="datetime-local" class="form-control" id="prazo" name="prazo">
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button type="submit" class="btn btn-primary" style="flex: 2;">Adicionar Tarefa</button>
+            <a href="{{ url_for('ver_projeto', id=projeto.id) }}" class="btn"
+                style="flex: 1; text-align: center; background: #cbd5e0; color: #4a5568; padding: 10px; border-radius: 5px; text-decoration: none;">Voltar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
